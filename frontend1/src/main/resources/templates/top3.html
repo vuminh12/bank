@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information Salary</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
+</head>
+<body>
+<div id="centerAlign">
+    <div id="header">
+        <h3>Chào mừng đến với ngân hàng KITS</h3>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
+    </div>
+    <br>
+    <div id="body">
+        <table cellspacing="5" border="1" th:object="${top3s}">
+            <tr>
+                <th>Ma khach hang</th>
+                <th>Tong tien gui</th>
+
+            </tr>
+            <tr th:each="top3:${top3s} " >
+                <td align="left"><label th:name="makhachhang" th:text="${top3.makhachhang}"></label></td>
+                <td align="left"><label th:name="tongtiengui" th:text="${top3.tongtiengui}"></label></td>
+            </tr>
+        </table>
+
+    </div>
+    <br>
+    <div id="footer">
+        <h3>All rights reserved 2020 KITS Bank</h3>
+        <div id="footer-bar">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Thông tin tài chính</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>So no ton dong</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="/js/custom.js"></script>
+    <script src="./js/custom.js"></script>
+</head>
+<body>
+<div id="centerAlign">
+    <div id="header">
+        <h3>Chào mừng đến với ngân hàng KITS</h3>
+        <h5>Thời gian hiện tại là <span id="time"></span></h5>
+        <script>currentTime("time")</script>
+    </div>
+    <br>
+    <div id="body">
+        <table cellspacing="5" border="1" th:object="${sonotondongs}">
+            <tr>
+                <th>Ma khach hang</th>
+                <th>So luong tai khoan ton no</th>
+                <th>tong tien no</th>
+
+            </tr>
+            <tr th:each="sonotondong:${sonotondongs} " >
+                <td align="left"><label th:name="mataikhoan" th:text="${sonotondong.makhachhang}"></label></td>
+                <td align="left"><label th:name="soluongtaikhoantd" th:text="${sonotondong.soluongtaikhoantd}"></label></td>
+                <td align="left"><label th:name="tongtienno" th:text="${sonotondong.tongtienno}"></label></td>
+            </tr>
+        </table>
+
+    </div>
+    <br>
+    <div id="footer">
+        <h3>All rights reserved 2020 KITS Bank</h3>
+        <div id="footer-bar">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Thông tin tài chính</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
